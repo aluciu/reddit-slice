@@ -1,5 +1,5 @@
 ## Project Requirements:
-- [] Build the application using React and Redux
+-[] Build the application using React and Redux
 - [] Version control your application with Git and host the repository on GitHub
 - [] Use a project management tool (GitHub Projects, Trello, etc.) to plan your work
 - [] Write a README (using Markdown) that documents your project including:
