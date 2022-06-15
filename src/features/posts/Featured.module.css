@@ -1,0 +1,19 @@
+.posts {
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; */
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.featured {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #f48750;
+  /* border: 4px solid #38242C; */
+  box-shadow: 6px 6px 0px rgba(56, 36, 44, 0.7);
+}
