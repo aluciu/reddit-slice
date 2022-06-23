@@ -2,8 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const loadCommentsForPostId = createAsyncThunk(
   'comments/loadCommentsForPostId',
-  async (postId) => {
-    const response = await fetch(`https://www.reddit.com/r/80smusic/comments/${postId}.json`);
+  async (comments) => {
+    const {postId, subreddit} = comments;
+    const response = await fetch(`https://www.reddit.com/r/${subreddit}/comments/${postId}.json`);
     const json = await response.json();
     return json;
   }

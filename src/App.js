@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  NavLink
+  NavLink,
+  useLocation
 } from "react-router-dom";
 import ROUTES from "./app/routes";
 import { Footer } from './components/Footer/Footer';
@@ -21,13 +21,18 @@ const appSubreddits = [
 ];
 
 function App() {
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const postId = queryParams.get('comments');
+  const subreddit = queryParams.get('subreddit');
+
   return (
-    <Router>
+    <>
       <Header />
       <nav>
         <ul>
           {appSubreddits.map(subreddit => (
-            <li>
+            <li key={subreddit}>
               <NavLink
                 to={ROUTES.subreddit(subreddit)}
                 activeClassName="active"
@@ -47,15 +52,20 @@ function App() {
           {/* <Counter /> */}
           {appSubreddits.map(subreddit => (
             <Featured
+              key={subreddit}
               subreddit={subreddit}
             />
           ))}
 
-          {/* <Comments /> */}
+
         </Route>
       </Switch>
       <Footer />
-    </Router>
+
+      {postId &&
+        <Comments postId={postId} subreddit={subreddit} />
+      }
+    </>
   );
 }
 

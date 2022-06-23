@@ -7,33 +7,28 @@ import styles from "./Posts.module.css";
 
 const Posts = () => {
   const dispatch = useDispatch();
-  // const posts = useSelector(selectPosts);
+  const loadingPosts = useSelector(loading);
   let { name } = useParams();
   const posts = useSelector(state => selectFeaturedPosts(state, name));
-  console.log('Posts >>>', posts);
 
   useEffect(() => {
     dispatch(loadAllPosts({subreddit: name, limit: 10}));
-  }, [dispatch]);
+  }, [dispatch, name]);
 
-  // if (loadingPosts) return <div>loading posts</div>;
-  // if (!posts) return null;
+  if (!posts) return null;
+  if (loadingPosts || posts.length === 0) return <div>loading posts</div>;
 
   return (
     <div>
       Posts {name}
       <div className={styles.grid}>
-      {posts.map((post) => (
-        <PostPreview
-          post={post}
-        />
-      ))}
+        {posts.map((post) => (
+          <PostPreview
+            key={post.id}
+            post={post}
+          />
+        ))}
       </div>
-      {/* {Object.values(posts).map((post) => (
-        <PostPreview
-          post={post}
-        />
-      ))} */}
     </div>
   );
 };

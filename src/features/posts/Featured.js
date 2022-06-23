@@ -10,8 +10,6 @@ const Featured = ({subreddit}) => {
   const posts = useSelector(state => selectFeaturedPosts(state, subreddit));
   const loadingPosts = useSelector(loading);
 
-  console.log('Featured >>>', posts);
-
   useEffect(() => {
     dispatch(loadAllPosts({subreddit: subreddit, limit: 10}));
   }, [dispatch, subreddit]);
@@ -28,6 +26,7 @@ const Featured = ({subreddit}) => {
       <div className={styles.posts}>
         {posts.slice(0, 3).map((post) => (
             <PostPreview
+              key={post.id}
               post={post}
             />
         ))}
