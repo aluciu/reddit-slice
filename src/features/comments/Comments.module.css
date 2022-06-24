@@ -1,5 +1,5 @@
 .modaloverlay {
-  background:rgba(0,0,0,0.8);
+  background:rgba(0,0,0,0.6);
   bottom:0;
   left:0;
   position:fixed;
@@ -29,9 +29,12 @@
   height: 100%;
   position:relative;
   margin:0 auto;
-  padding:3em;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+
+  background: #FBF9F9;
+  border: 4px solid #38242C;
+  box-shadow: 6px 6px 0px rgba(56, 36, 44, 0.7);
 }
 
 @media (min-width: 60em) {
@@ -39,26 +42,25 @@
     height:75%;
     margin:5% auto;
     max-height: 57em;
-    max-width:66em;
+    max-width: 500px;
     width:85%;
   }
 }
 
-.modal > iframe {
-  border:none;
-  width:100%;
-  height:100%;
+.close{
+  text-decoration: none;
+  color: #EE4587;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.close{
-  background-color:turquoise;
-  color:white;
-  font-size:24px;
-  padding:8px 12px;
-  position:absolute;
-  right:0;
-  text-align:center;
-  text-decoration:none;
-  top:0;
-  z-index: 1;
+.top {
+  border-bottom: 2px solid #38242C;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  text-align: right;
+  padding: 15px;
+  z-index: 10;
 }

@@ -1,20 +1,47 @@
 import React from "react";
-import DOMPurify from "dompurify";
+import { cleanHTML, unEscape } from "../../helpers/helpers";
+import styles from './VideoDisplay.module.css';
 
 const VideoDisplay = ({ post }) => {
   if (post.post_hint === 'link') {
     return (
-      <div>
+      <div className={styles.cover}>
         <img src={unEscape(post.preview.images[0].source.url)} alt={post.title} />
-        {post.url}
+        <a href={post.url}>link</a>
         <h3>{post.title}</h3>
       </div>
     );
-  }
-  return (
-    <div>
+  } else if (post.post_hint === 'self') {
+    return (
       <div>
+         <h3>{post.title}</h3>
         <div
+          dangerouslySetInnerHTML={{__html: cleanHTML(post.selftext_html)}}
+        />
+      </div>
+    );
+  } else if (post.post_hint === 'hosted:video') {
+    return (
+      <div>
+        <img src={unEscape(post.preview.images[0].source.url)} alt={post.title} />
+        <a href={post.url}>hosted video</a>
+        <h3>{post.title}</h3>
+      </div>
+    );
+  } else if (post.crosspost_parent && post.crosspost_parent.length > 0) {
+    return (
+      <div>
+        <img src={unEscape(post.thumbnail)} alt={post.title} />
+        <a href={post.crosspost_parent_list[0].url}>crosspost</a>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.cover}>
+      <div className={styles.ratio}>
+        <div
+          className={styles.video}
           dangerouslySetInnerHTML={{__html: cleanHTML(post.media_embed.content)}}
         />
       </div>
@@ -22,20 +49,5 @@ const VideoDisplay = ({ post }) => {
     </div>
   );
 }
-
-
-function unEscape(htmlStr) {
-  htmlStr = htmlStr.replace(/&lt;/g , "<");
-  htmlStr = htmlStr.replace(/&gt;/g , ">");
-  htmlStr = htmlStr.replace(/&quot;/g , "\"");
-  // eslint-disable-next-line
-  htmlStr = htmlStr.replace(/&#39;/g , "\'");
-  htmlStr = htmlStr.replace(/&amp;/g , "&");
-  return htmlStr;
-}
-
-const cleanHTML = (content) => DOMPurify.sanitize(unEscape(content), {
-  ALLOWED_TAGS: ['iframe']
-});
 
 export default VideoDisplay;
