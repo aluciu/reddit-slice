@@ -2,9 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CommentsList from "../../components/CommentsList/CommentsList";
 import { loadCommentsForPostId, selectComments, loading } from "./commentsSlice";
+import { selectPostById } from "../posts/postsSlice";
+import VideoDisplay from "../../components/VideoDisplay/VideoDisplay";
+import styles from "./Comments.module.css";
 
 const Comments = ({ postId, subreddit }) => {
   const dispatch = useDispatch();
+  const post = useSelector((state) => selectPostById(state, postId));
   const comments = useSelector(selectComments);
   const loadingComments = useSelector(loading);
 
@@ -19,8 +23,11 @@ const Comments = ({ postId, subreddit }) => {
   if (!postComments) return null;
 
   return (
-    <div>
-      <CommentsList comments={postComments} />
+    <div className={styles.modaloverlay}>
+      <div className={styles.modal}>
+        <VideoDisplay post={post} />
+        <CommentsList comments={postComments} />
+      </div>
     </div>
   );
 }

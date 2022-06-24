@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './PostPreview.module.css';
-import ROUTES from "../../app/routes";
 import { Link, useLocation } from "react-router-dom";
 
 export function PostPreview({ post }) {

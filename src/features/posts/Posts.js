@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { PostPreview } from "../../components/PostPreview/PostPreview";
-import { loadAllPosts, selectPosts, selectFeaturedPosts, loading } from "./postsSlice";
+import { loadAllPosts, selectFeaturedPosts, loading } from "./postsSlice";
 import styles from "./Posts.module.css";
 
 const Posts = () => {
@@ -12,7 +12,7 @@ const Posts = () => {
   const posts = useSelector(state => selectFeaturedPosts(state, name));
 
   useEffect(() => {
-    dispatch(loadAllPosts({subreddit: name, limit: 10}));
+    dispatch(loadAllPosts({subreddit: name, limit: 12}));
   }, [dispatch, name]);
 
   if (!posts) return null;

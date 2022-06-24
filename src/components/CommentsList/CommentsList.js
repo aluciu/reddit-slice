@@ -1,6 +1,6 @@
 import React from "react";
 
-const CommentsList = ({ comments }) => {
+const CommentsList = ({ comments, post }) => {
   if (comments.length === 0) {
     return (
       <div>No comments here</div>

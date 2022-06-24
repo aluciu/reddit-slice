@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PostPreview } from "../../components/PostPreview/PostPreview";
-import { loadAllPosts, selectPosts, selectFeaturedPosts, loading } from "./postsSlice";
+import { loadAllPosts, selectFeaturedPosts, loading } from "./postsSlice";
 import styles from "./Featured.module.css";
 
 const Featured = ({subreddit}) => {
   const dispatch = useDispatch();
-  // const posts = useSelector(selectPosts, '80smusic');
   const posts = useSelector(state => selectFeaturedPosts(state, subreddit));
   const loadingPosts = useSelector(loading);
 

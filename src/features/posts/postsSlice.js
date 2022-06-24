@@ -13,7 +13,7 @@ export const loadAllPosts = createAsyncThunk(
 export const postsSlice = createSlice({
   name: 'posts',
   initialState: {
-    allPosts: {
+    byId: {
       // postId: {}
     },
     bySubreddit: {
@@ -34,7 +34,7 @@ export const postsSlice = createSlice({
         state.bySubreddit[subreddit] = [];
         action.payload.children.forEach(post => {
           state.bySubreddit[subreddit].push(post.data);
-          // state.posts[subreddit][post.data.id] = post.data;
+          state.byId[post.data.id] = post.data;
         });
 
         state.loading = false;
@@ -47,8 +47,8 @@ export const postsSlice = createSlice({
   },
 });
 
-export const selectPosts = (state, subreddit) => {
-  return state.posts.allPosts;
+export const selectPostById = (state, postId) => {
+  return state.posts.byId[postId];
 };
 export const selectFeaturedPosts = (state, subreddit) => {
   const featuredPosts = state.posts.bySubreddit[subreddit];

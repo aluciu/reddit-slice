@@ -1,0 +1,64 @@
+.modaloverlay {
+  background:rgba(0,0,0,0.8);
+  bottom:0;
+  left:0;
+  position:fixed;
+  right:0;
+  top:0;
+  transition: opacity 400ms ease-in;
+  /* display: none; */
+  /* z-index:-1; */
+  /* opacity:0; */
+  /* pointer-events:none; */
+  display: block;
+  z-index:99999;
+  opacity:1;
+  pointer-events:auto;
+}
+
+.modaloverlay:target{
+  display: block;
+  z-index:99999;
+  opacity:1;
+  pointer-events:auto;
+}
+
+
+.modal {
+  background-color:white;
+  height: 100%;
+  position:relative;
+  margin:0 auto;
+  padding:3em;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 60em) {
+  .modal {
+    height:75%;
+    margin:5% auto;
+    max-height: 57em;
+    max-width:66em;
+    width:85%;
+  }
+}
+
+.modal > iframe {
+  border:none;
+  width:100%;
+  height:100%;
+}
+
+.close{
+  background-color:turquoise;
+  color:white;
+  font-size:24px;
+  padding:8px 12px;
+  position:absolute;
+  right:0;
+  text-align:center;
+  text-decoration:none;
+  top:0;
+  z-index: 1;
+}
