@@ -1,0 +1,36 @@
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 15px;
+}
+
+.title span {
+  color: #EE4587;
+}
+
+.commentsLits {
+  padding: 0;
+  margin: 0;
+  border-top: 2px solid #38242C;
+  font-size: 14px;
+}
+
+.commentsLits li {
+  list-style: none;
+  padding: 15px;
+  border-bottom: 2px solid #38242C;
+}
+
+.commentsLits li:last-child {
+  border-bottom: none;
+}
+
+.meta {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.meta span {
+  color: #EE4587;
+}

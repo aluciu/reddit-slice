@@ -37,10 +37,25 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 1.2em;
-
   color: #38242C;
+  transition: all .3s ease-in-out;
+
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.post:hover .title {
+  color: #EE4587;
+}
+
+.title a {
+  color: #38242C;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.post:hover a {
+  color: #EE4587;
 }

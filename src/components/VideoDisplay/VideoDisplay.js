@@ -45,7 +45,7 @@ const VideoDisplay = ({ post }) => {
           dangerouslySetInnerHTML={{__html: cleanHTML(post.media_embed.content)}}
         />
       </div>
-      <h3>{post.title}</h3>
+      <h3 className={styles.title}>{post.title}</h3>
     </div>
   );
 }

@@ -24,3 +24,10 @@
 .cover {
   padding: 15px;
 }
+
+.title {
+  font-size: 24px;
+  margin-top: 10px;
+  line-height: 1.2;
+  color: #38242C;
+}

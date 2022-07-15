@@ -2,10 +2,8 @@ import React from 'react';
 import {
   Switch,
   Route,
-  NavLink,
   useLocation
 } from "react-router-dom";
-import ROUTES from "./app/routes";
 import { Footer } from './components/Footer/Footer';
 import './App.css';
 import Posts from './features/posts/Posts';
@@ -13,7 +11,7 @@ import Comments from './features/comments/Comments';
 import Featured from './features/posts/Featured';
 import { Header } from './components/Header/Header';
 
-const appSubreddits = [
+export const appSubreddits = [
   '80smusic',
   '90smusic',
   '2000sMusic',
@@ -29,21 +27,6 @@ function App() {
   return (
     <>
       <Header />
-      <nav>
-        <ul>
-          {appSubreddits.map(subreddit => (
-            <li key={subreddit}>
-              <NavLink
-                to={ROUTES.subreddit(subreddit)}
-                activeClassName="active"
-              >
-                {subreddit}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
       <Switch>
         <Route path="/subreddit/:name">
           <Posts />

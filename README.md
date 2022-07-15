@@ -34,18 +34,18 @@ The application will allow users to view and search posts and comments provided 
 - Redux Toolkit
 - React Router
 
-https://memgraph.com/real-time-data-sources/reddit-json-api
-https://www.reddit.com/r/80smusic.json?limit=6&t=month&after=t3_uxozky
-https://www.figma.com/file/o8Q3gj7M5e4xtOnSBsE5Z0/Reddit-Slice---Wireframes
+- https://memgraph.com/real-time-data-sources/reddit-json-api
+- https://www.reddit.com/r/80smusic.json?limit=6&t=month&after=t3_uxozky
+- https://www.figma.com/file/o8Q3gj7M5e4xtOnSBsE5Z0/Reddit-Slice---Wireframes
 
 ## Inspiration
-https://www.behance.net/gallery/125006145/arty-mobile-app
-https://dribbble.com/shots/18149106-Balenciaga-E-commerce-website-redesign-concept
-https://brutalistthemes.com/free-fonts-for-brutalist-websites/
-https://colors.muz.li/palette/f7f4f4/ee4587/38242c/f48750/a9a29e?utm_source=extension&utm_medium=muzli
-https://discuss.codecademy.com/t/about-the-portfolio-project-reddit-project-category/535748/74
-https://reddit-client.netlify.app/
-https://github.com/AidanKLee/readit-reddit-client
-https://github.com/DavyK17/fgc-reddit
-https://github.com/Kasuk1/personal-justreddit
-https://github.com/YannikS14/reddit-client
+- https://www.behance.net/gallery/125006145/arty-mobile-app
+- https://dribbble.com/shots/18149106-Balenciaga-E-commerce-website-redesign-concept
+- https://brutalistthemes.com/free-fonts-for-brutalist-websites/
+- https://colors.muz.li/palette/f7f4f4/ee4587/38242c/f48750/a9a29e?utm_source=extension&utm_medium=muzli
+- https://discuss.codecademy.com/t/about-the-portfolio-project-reddit-project-category/535748/74
+- https://reddit-client.netlify.app/
+- https://github.com/AidanKLee/readit-reddit-client
+- https://github.com/DavyK17/fgc-reddit
+- https://github.com/Kasuk1/personal-justreddit
+- https://github.com/YannikS14/reddit-client

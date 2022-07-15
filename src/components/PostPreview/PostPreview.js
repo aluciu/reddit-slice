@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './PostPreview.module.css';
+import { cleanHTML } from "../../helpers/helpers";
 import { Link, useLocation } from "react-router-dom";
 
 export function PostPreview({ post }) {
@@ -19,7 +20,7 @@ export function PostPreview({ post }) {
         <Link
           to={`${location.pathname}?comments=${post.id}&subreddit=${post.subreddit}`}
         >
-          {post.title}
+          <span dangerouslySetInnerHTML={{__html: cleanHTML(post.title)}} />
         </Link>
       </h3>
     </article>
