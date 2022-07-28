@@ -7,6 +7,7 @@ import {
 import { Footer } from './components/Footer/Footer';
 import './App.css';
 import Posts from './features/posts/Posts';
+import Search from './features/search/Search';
 import Comments from './features/comments/Comments';
 import Featured from './features/posts/Featured';
 import { Header } from './components/Header/Header';
@@ -31,6 +32,9 @@ function App() {
         <Route path="/subreddit/:name">
           <Posts />
         </Route>
+        <Route path="/search">
+          <Search />
+        </Route>
         <Route path="/">
           {/* <Counter /> */}
           {appSubreddits.map(subreddit => (
@@ -39,8 +43,6 @@ function App() {
               subreddit={subreddit}
             />
           ))}
-
-
         </Route>
       </Switch>
       <Footer />
