@@ -9,6 +9,7 @@
   margin-bottom: 10px;
   position: relative;
   display: block;
+  background: red;
   /* aspect-ratio: 4/3; */
 }
 
@@ -17,7 +18,7 @@
   content: "";
   width: 100%;
   padding-top: 56.25%;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .ratio {

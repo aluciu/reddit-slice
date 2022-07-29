@@ -3,6 +3,7 @@ import { Link, NavLink, } from "react-router-dom";
 import styles from './Header.module.css';
 import { appSubreddits } from "../../App";
 import ROUTES from "../../app/routes";
+import { Search } from "../Search/Search";
 
 
 export const Header = () => {
@@ -10,7 +11,9 @@ export const Header = () => {
     <header className={styles.header}>
       <div className={styles.top}>
         <h1 className={styles.logo}><Link to="/">reddit <span>/</span> slice</Link></h1>
-        <div className={styles.search}>Search</div>
+        <div className={styles.search}>
+          <Search />
+        </div>
       </div>
 
       <nav className={styles.navigation}>
@@ -31,4 +34,3 @@ export const Header = () => {
     </header>
   );
 }
-

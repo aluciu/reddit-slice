@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { appSubreddits } from "../../App";
-// https://www.reddit.com/r/videos/search.json?q=potatoes+dog&restrict_sr=on&include_over_18=on&sort=relevance&t=all
 
 export const searchSlice = createSlice({
   name: 'search',
@@ -8,15 +7,14 @@ export const searchSlice = createSlice({
     bySubreddit: {
       // 80smusic: []
     },
-    searchTerm: '',
     loading: false,
     error: false,
   },
-  reducers: {
-    setSearchTerm(state, action) {
-      state.searchTerm = action.payload;
-    }
-  },
+  // reducers: {
+  //   setSearchTerm(state, action) {
+  //     state.searchTerm = action.payload;
+  //   }
+  // },
   extraReducers: (builder) => {
     builder
       .addCase(loadSearchResults.pending, (state) => {
