@@ -27,8 +27,6 @@ const Posts = () => {
     dispatch(loadAllPosts({subreddit: name, limit: 12, cursor: cursor}));
   }
 
-  console.log('render', posts);
-
   if (!posts) {
     let componentsArray = [];
     for (let i=0; i < 3; i++) {

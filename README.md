@@ -1,3 +1,5 @@
+Live: https://aluciu.github.io/reddit-slice/
+
 ## Project Requirements:
 The application will allow users to view and search posts and comments provided by the API.
 

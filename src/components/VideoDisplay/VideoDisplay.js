@@ -3,7 +3,6 @@ import { cleanHTML, unEscape } from "../../helpers/helpers";
 import styles from './VideoDisplay.module.css';
 
 const VideoDisplay = ({ post }) => {
-  console.log("VideoDisplay", post);
   if (post.post_hint === 'link') {
     return (
       <div className={styles.cover}>
