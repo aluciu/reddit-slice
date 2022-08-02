@@ -12,14 +12,18 @@ const Featured = ({subreddit}) => {
 
   useEffect(() => {
     dispatch(loadAllPosts({subreddit: subreddit, limit: 10}));
-  }, [dispatch, subreddit]);
+  }, [subreddit, dispatch]);
 
   if (!posts) {
+    let componentsArray = [];
+    for (let i=0; i < 3; i++) {
+      componentsArray.push(<PostLoading key={`loader-${i}`} />);
+    }
     return (
       <div className={styles.featured}>
         <h2>Featured {subreddit}</h2>
         <div className={styles.posts}>
-          {Array(3).fill(<PostLoading />)}
+          {componentsArray}
         </div>
       </div>
     );

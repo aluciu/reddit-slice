@@ -15,6 +15,8 @@ const Comments = ({ postId, subreddit }) => {
   const location = useLocation();
   let history = useHistory();
 
+  console.log("COMMENTS:", postId, subreddit);
+
   useEffect(() => {
     dispatch(loadCommentsForPostId({postId: postId, subreddit: subreddit}));
   }, [dispatch, postId, subreddit]);

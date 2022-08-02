@@ -2,26 +2,43 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { PostPreview } from "../../components/PostPreview/PostPreview";
-import { loadAllPosts, selectFeaturedPosts, loading } from "./postsSlice";
+import { loadAllPosts, selectFeaturedPosts, selectCursor, loading } from "./postsSlice";
 import styles from "./Posts.module.css";
 import PostLoading from '../../components/PostPreview/PostLoading';
 
 const Posts = () => {
+  // const firstRenderRef = useRef(true);
   const dispatch = useDispatch();
   const loadingPosts = useSelector(loading);
   let { name } = useParams();
   const posts = useSelector(state => selectFeaturedPosts(state, name));
+  const cursor = useSelector(state => selectCursor(state, name));
 
   useEffect(() => {
+    // if(firstRenderRef.current){
+    //   firstRenderRef.current = false;
+    //   return;
+    // }
+    // console.log("rendered", name);
     dispatch(loadAllPosts({subreddit: name, limit: 12}));
-  }, [dispatch, name]);
+  }, [name, dispatch]);
+
+  const onLoadMore = () => {
+    dispatch(loadAllPosts({subreddit: name, limit: 12, cursor: cursor}));
+  }
+
+  console.log('render', posts);
 
   if (!posts) {
+    let componentsArray = [];
+    for (let i=0; i < 3; i++) {
+      componentsArray.push(<PostLoading key={`loader-${i}`} />);
+    }
     return (
       <div>
         Posts {name}
         <div className={styles.grid}>
-          {Array(12).fill(<PostLoading />)}
+          {componentsArray}
         </div>
       </div>
     );
@@ -39,6 +56,8 @@ const Posts = () => {
           />
         ))}
       </div>
+
+      <button onClick={onLoadMore}>Load More</button>
     </div>
   );
 };
