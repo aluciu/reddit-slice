@@ -20,21 +20,21 @@ const Posts = () => {
     //   return;
     // }
     // console.log("rendered", name);
-    dispatch(loadAllPosts({subreddit: name, limit: 12}));
+    dispatch(loadAllPosts({ subreddit: name, limit: 12 }));
   }, [name, dispatch]);
 
   const onLoadMore = () => {
-    dispatch(loadAllPosts({subreddit: name, limit: 12, cursor: cursor}));
+    dispatch(loadAllPosts({ subreddit: name, limit: 12, cursor: cursor }));
   }
 
   if (!posts) {
     let componentsArray = [];
-    for (let i=0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
       componentsArray.push(<PostLoading key={`loader-${i}`} />);
     }
     return (
-      <div>
-        Posts {name}
+      <div className={styles.container}>
+        <h2 className={styles.title}><span>/</span> {name}</h2>
         <div className={styles.grid}>
           {componentsArray}
         </div>
@@ -44,8 +44,8 @@ const Posts = () => {
   if (loadingPosts && posts.length === 0) return <div>loading 2</div>;
 
   return (
-    <div>
-      Posts {name}
+    <div className={styles.container}>
+      <h2 className={styles.title}><span>/</span> {name}</h2>
       <div className={styles.grid}>
         {posts.map((post) => (
           <PostPreview
@@ -55,7 +55,7 @@ const Posts = () => {
         ))}
       </div>
 
-      <button onClick={onLoadMore}>Load More</button>
+      <button className={styles.button} onClick={onLoadMore}>Load More</button>
     </div>
   );
 };

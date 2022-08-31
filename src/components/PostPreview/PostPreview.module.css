@@ -9,7 +9,7 @@
   margin-bottom: 10px;
   position: relative;
   display: block;
-  background: red;
+  background: rgba(238, 69, 135, 0.6);
   /* aspect-ratio: 4/3; */
 }
 
