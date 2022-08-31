@@ -41,6 +41,7 @@ The application will allow users to view and search posts and comments provided 
 - https://www.figma.com/file/o8Q3gj7M5e4xtOnSBsE5Z0/Reddit-Slice---Wireframes
 
 ## Inspiration
+- https://www.useparallel.com/
 - https://www.behance.net/gallery/125006145/arty-mobile-app
 - https://dribbble.com/shots/18149106-Balenciaga-E-commerce-website-redesign-concept
 - https://brutalistthemes.com/free-fonts-for-brutalist-websites/
