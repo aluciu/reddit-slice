@@ -30,11 +30,11 @@ The application will allow users to view and search posts and comments provided 
 
 ## Technologies used
 - [Create React App](https://create-react-app.dev/)
-- React
-- Redux
-- React-Redux
-- Redux Toolkit
-- React Router
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [React-Redux](https://react-redux.js.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
 
 - https://memgraph.com/real-time-data-sources/reddit-json-api
 - https://www.reddit.com/r/80smusic.json?limit=6&t=month&after=t3_uxozky

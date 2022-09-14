@@ -16,16 +16,17 @@ const CommentsList = ({ comments, post }) => {
     <div className={styles.comments}>
       <h2 className={styles.title}><span>/</span> Comments</h2>
       <ul className={styles.commentsLits}>
-      {comments.map((comment) => (
-        <li key={comment.id}>
-          <p className={styles.meta}>
-            <span>{dayjs.unix(comment.created).format('DD.MM.YYYY')}</span> / {comment.author}
-          </p>
-          <div
-            dangerouslySetInnerHTML={{__html: cleanHTML(comment.body_html)}}
-          />
-        </li>
-      ))}
+        {comments.map((comment) => (
+          <li key={comment.id}>
+            <p className={styles.meta}>
+              <span>{dayjs.unix(comment.created).format('DD.MM.YYYY')}</span> / {comment.author}
+            </p>
+            <div
+              className={styles.body}
+              dangerouslySetInnerHTML={{ __html: cleanHTML(comment.body_html) }}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   );

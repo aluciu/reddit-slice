@@ -4,7 +4,7 @@
   content: "";
   width: 100%;
   padding-top: 56.25%;
-  background-color: red;
+  background: rgba(238, 69, 135, 0.6);
 }
 
 .video {
@@ -16,9 +16,13 @@
 }
 
 .video iframe {
-  border:none;
+  border: none;
   width: 100%;
   height: 100%;
+}
+
+.cover img {
+  width: 100%;
 }
 
 .cover {
@@ -30,4 +34,36 @@
   margin-top: 10px;
   line-height: 1.2;
   color: #38242C;
+}
+
+.external {
+  position: relative;
+  color: #EE4587;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+}
+
+.external:hover .overlay {
+  opacity: 1;
+}
+
+.noimage {
+  background: rgba(238, 69, 135, 0.6);
+  display: block;
+  width: 100%;
+  height: 260px;
 }
