@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/reddit-slice/static/css/main.d0b344a6.css",
-    "main.js": "/reddit-slice/static/js/main.401ceb72.js",
+    "main.css": "/reddit-slice/static/css/main.b5420a64.css",
+    "main.js": "/reddit-slice/static/js/main.dd5bed84.js",
     "static/js/787.74ca750a.chunk.js": "/reddit-slice/static/js/787.74ca750a.chunk.js",
     "index.html": "/reddit-slice/index.html",
-    "main.d0b344a6.css.map": "/reddit-slice/static/css/main.d0b344a6.css.map",
-    "main.401ceb72.js.map": "/reddit-slice/static/js/main.401ceb72.js.map",
+    "main.b5420a64.css.map": "/reddit-slice/static/css/main.b5420a64.css.map",
+    "main.dd5bed84.js.map": "/reddit-slice/static/js/main.dd5bed84.js.map",
     "787.74ca750a.chunk.js.map": "/reddit-slice/static/js/787.74ca750a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0b344a6.css",
-    "static/js/main.401ceb72.js"
+    "static/css/main.b5420a64.css",
+    "static/js/main.dd5bed84.js"
   ]
 }
