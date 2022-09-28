@@ -60,7 +60,7 @@ const Search = () => {
 const SearchResults = ({ subreddit, posts }) => {
   return (
     <div className={styles.sectionContainer}>
-      <h3 className={styles.sectionTitle}><span>//</span> {subreddit}</h3>
+      <h3 className={styles.sectionTitle}><span>/</span> {subreddit}</h3>
       <div className={styles.grid}>
         {posts.map((post) => (
           <PostPreview
