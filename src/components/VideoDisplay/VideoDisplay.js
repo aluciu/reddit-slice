@@ -3,7 +3,27 @@ import { cleanHTML, unEscape } from "../../helpers/helpers";
 import styles from './VideoDisplay.module.css';
 
 const VideoDisplay = ({ post }) => {
-  if (post.post_hint === 'link') {
+  if (post.poll_data) {
+    return (
+      <div className={styles.cover}>
+        <a href={post.url} target="_blank" rel="noreferrer" className={styles.external}>
+          <span className={styles.noimage} />
+          <span className={styles.overlay}>Open Outside</span>
+        </a>
+        <h3 className={styles.title}>{post.title}</h3>
+      </div>
+    );
+  } else if (post.post_hint === 'link') {
+    return (
+      <div className={styles.cover}>
+        <a href={post.url} target="_blank" rel="noreferrer" className={styles.external}>
+          <img src={unEscape(post.preview.images[0].source.url)} alt={post.title} />
+          <span className={styles.overlay}>Open Outside</span>
+        </a>
+        <h3 className={styles.title}>{post.title}</h3>
+      </div>
+    );
+  } else if (post.post_hint === 'image') {
     return (
       <div className={styles.cover}>
         <a href={post.url} target="_blank" rel="noreferrer" className={styles.external}>

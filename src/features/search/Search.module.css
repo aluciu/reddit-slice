@@ -5,3 +5,27 @@
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  color: #38242C;
+  font-size: 28px;
+}
+
+.sectionTitle {
+  margin-bottom: 10px;
+  color: #38242C;
+  font-size: 24px;
+}
+
+.sectionTitle span {
+  color: #EE4587;
+}
+
+.sectionContainer {
+  margin-bottom: 40px;
+}

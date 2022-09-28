@@ -4,13 +4,13 @@ import {
   Route,
   useLocation
 } from "react-router-dom";
-import { Footer } from './components/Footer/Footer';
-import './App.css';
 import Posts from './features/posts/Posts';
 import Search from './features/search/Search';
 import Comments from './features/comments/Comments';
 import Featured from './features/posts/Featured';
+import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
+import './App.css';
 
 export const appSubreddits = [
   '80smusic',
@@ -36,7 +36,6 @@ function App() {
           <Search />
         </Route>
         <Route path="/">
-          {/* <Counter /> */}
           {appSubreddits.map(subreddit => (
             <Featured
               key={subreddit}

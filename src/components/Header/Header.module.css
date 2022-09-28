@@ -54,3 +54,35 @@
 .logo span {
   color: #ee4587;
 }
+
+@media (max-width: 1023px) {
+  .header {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+
+@media (max-width: 767px) {
+  .navigation ul {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navigation li {
+    padding: 0;
+  }
+
+  .top {
+    flex-direction: column;
+  }
+
+  .search {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .top {
+    margin-bottom: 2em;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearchTerm } from '../../features/search/searchSlice';
+import styles from './Search.module.css';
 
 export const Search = () => {
   const [searchTermLocal, setSearchTermLocal] = useState('');
@@ -27,6 +28,7 @@ export const Search = () => {
     <div>
       <form onSubmit={onSearchTermSubmit}>
         <input
+          className={styles.input}
           type="text"
           placeholder="Search and hit enter"
           value={searchTermLocal}

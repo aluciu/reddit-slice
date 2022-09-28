@@ -1,17 +1,14 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { PostPreview } from "../../components/PostPreview/PostPreview";
 import { useDispatch, useSelector } from 'react-redux';
-import { loadSearchResults, selectSearchResults, loading } from "../posts/postsSlice";
+import { loadSearchResults, selectSearchResults } from "../posts/postsSlice";
 import styles from "./Search.module.css";
 import PostLoading from '../../components/PostPreview/PostLoading';
 import { appSubreddits } from "../../App";
 
 const Search = () => {
-  const { search } = useLocation();
   const dispatch = useDispatch();
   const posts = useSelector(state => selectSearchResults(state));
-  const isLoading = useSelector(loading);
   const searchTerm = useSelector((state) => state.search.searchTerm);
 
 
@@ -25,36 +22,23 @@ const Search = () => {
     && Object.getPrototypeOf(posts) === Object.prototype
   ) {
     let componentsArray = [];
-    for (let i=0; i < 12; i++) {
+    for (let i = 0; i < 12; i++) {
       componentsArray.push(<PostLoading key={`loader-${i}`} />);
     }
 
     return (
-      <div>
-      Search {searchTerm}
-      <div className={styles.grid}>
-        {componentsArray}
+      <div className={styles.container}>
+        <h2 className={styles.pageTitle}>Search <em>{searchTerm}</em></h2>
+        <div className={styles.grid}>
+          {componentsArray}
+        </div>
       </div>
-    </div>
     );
   };
 
-  // if (isLoading && posts.length === 0) return <div>loading 2</div>;
-
-  const hasResults = (subreddit, posts) => {
-    if (posts[subreddit].length > 0) return true;
-  }
-
-  if (!isLoading) {
-
-  }
-
-      // if no results
-      // display no results
-
   return (
-    <div>
-      Search {searchTerm}
+    <div className={styles.container}>
+      <h2 className={styles.pageTitle}>Search <em>{searchTerm}</em></h2>
 
       {appSubreddits.map(subreddit => {
         if (posts[subreddit].length > 0) {
@@ -73,20 +57,19 @@ const Search = () => {
   );
 };
 
-const SearchResults = ({subreddit, posts}) => {
+const SearchResults = ({ subreddit, posts }) => {
   return (
-
-      <>
-        {subreddit}
-        <div className={styles.grid}>
-          {posts.map((post) => (
-            <PostPreview
-              key={post.data.id}
-              post={post.data}
-            />
-          ))}
-        </div>
-      </>
+    <div className={styles.sectionContainer}>
+      <h3 className={styles.sectionTitle}><span>//</span> {subreddit}</h3>
+      <div className={styles.grid}>
+        {posts.map((post) => (
+          <PostPreview
+            key={post.data.id}
+            post={post.data}
+          />
+        ))}
+      </div>
+    </div>
 
   );
 }

@@ -17,3 +17,25 @@
   /* border: 4px solid #38242C; */
   box-shadow: 6px 6px 0px rgba(56, 36, 44, 0.7);
 }
+
+.title {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.title a {
+  text-decoration: none;
+  color: #F7F4F4;
+  transition: all .3s ease-in-out;
+}
+
+.title a:hover {
+  color: #EE4587;
+}
+
+@media (max-width: 1023px) {
+  .featured {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
