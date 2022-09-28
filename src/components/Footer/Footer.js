@@ -9,7 +9,7 @@ export function Footer() {
         <li><a href="https://www.codecademy.com/profiles/aluciu">CodeCademy</a></li>
         <li><a href="https://www.aluciu.ro/">aluciu.ro</a></li>
       </ul>
-      <p>Project for CodeCademy Course</p>
+      <p><a href="https://discuss.codecademy.com/t/about-the-portfolio-project-reddit-project-category/535748">Project for CodeCademy Course</a></p>
     </footer>
   );
 }

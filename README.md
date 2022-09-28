@@ -1,4 +1,4 @@
-A small slice of reddit with a selection of music subreddits.
+A small slice of reddit with a selection of music subreddits. This project is made as part of [Codecademy Front-End Engineer Path](https://discuss.codecademy.com/t/about-the-portfolio-project-reddit-project-category/535748).
 
 * Live: https://aluciu.github.io/reddit-slice/
 * [Wireframes](https://www.figma.com/file/rayzfA2gcH89eYRGPUfMeL/redditslice---design?node-id=12%3A7175)
