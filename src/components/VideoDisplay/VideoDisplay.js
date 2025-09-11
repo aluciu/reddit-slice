@@ -57,7 +57,9 @@ const VideoDisplay = ({ post }) => {
     return (
       <div className={styles.cover}>
         <a href={post.crosspost_parent_list[0].url} target="_blank" rel="noreferrer" className={styles.external}>
-          <img src={unEscape(post.thumbnail)} alt={post.title} />
+          {post.thumbnail && (
+            <img src={unEscape(post.thumbnail)} alt={post.title} />
+          )}
           <span className={styles.overlay}>Open Outside</span>
         </a>
         <h3 className={styles.title}>{post.title}</h3>
@@ -68,10 +70,12 @@ const VideoDisplay = ({ post }) => {
   return (
     <div className={styles.cover}>
       <div className={styles.ratio}>
-        <div
-          className={styles.video}
-          dangerouslySetInnerHTML={{ __html: cleanHTML(post.media_embed.content) }}
-        />
+        {post.media_embed?.content && (
+          <div
+            className={styles.video}
+            dangerouslySetInnerHTML={{ __html: cleanHTML(post.media_embed.content) }}
+          />
+        )}
       </div>
       <h3 className={styles.title}>{post.title}</h3>
     </div>

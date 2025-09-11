@@ -9,7 +9,13 @@ export const loadAllPosts = createAsyncThunk(
     if (cursor) {
       url = url + `&after=${cursor}`;
     }
-    const data = await fetch(url);
+    const data = await fetch(
+      url,
+      {
+        header: 'Access-Control-Allow-Origin: *',
+        mode: 'cors',
+      }
+    );
     const json = await data.json();
     return json.data;
   }
@@ -21,7 +27,13 @@ export const loadSearchResults = createAsyncThunk(
     const escSearchTerm = searchTerm.replace(/ /g, "+");
     // const data = await fetch(`https://www.reddit.com/r/videos/search.json?q=${escSearchTerm}&restrict_sr=on&include_over_18=on&sort=relevance&t=all&limit=2`);
     const arrayOfPromises = appSubreddits.map(subreddit => {
-      return fetch(`https://www.reddit.com/r/${subreddit}/search.json?q=${escSearchTerm}&restrict_sr=on&include_over_18=on&sort=relevance&t=all&limit=10`)
+      return fetch(
+        `https://www.reddit.com/r/${subreddit}/search.json?q=${escSearchTerm}&restrict_sr=on&include_over_18=on&sort=relevance&t=all&limit=10`,
+        {
+          header: 'Access-Control-Allow-Origin: *',
+          mode: 'cors',
+        }
+      )
         .then(response => response.json());
     });
 

@@ -3,8 +3,14 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const loadCommentsForPostId = createAsyncThunk(
   'comments/loadCommentsForPostId',
   async (comments) => {
-    const {postId, subreddit} = comments;
-    const response = await fetch(`https://www.reddit.com/r/${subreddit}/comments/${postId}.json`);
+    const { postId, subreddit } = comments;
+    const response = await fetch(
+      `https://www.reddit.com/r/${subreddit}/comments/${postId}.json`,
+      {
+        header: 'Access-Control-Allow-Origin: *',
+        mode: 'cors',
+      }
+    );
     const json = await response.json();
     return json;
   }
